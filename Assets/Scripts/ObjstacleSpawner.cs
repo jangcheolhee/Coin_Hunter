@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class CoinSpwaner : MonoBehaviour
+public class ObjstacleSpawner : MonoBehaviour
 {
-    public GameObject coin;
+    public GameObject obs;
     public float spawnRateMin = 0.5f;
     public float spawnRateMax = 1.0f;
 
-    float timer;
-    float interval;
+    private float timer;
+    private float interval;
 
     private void OnEnable()
     {
@@ -20,10 +20,10 @@ public class CoinSpwaner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > interval)
         {
-            GameObject go = Instantiate(coin);
+            GameObject go = Instantiate(obs);
+            go.transform.position = new Vector3(Random.Range(-10,10),10f, Random.Range(-10, 10));
             timer = 0;
             interval = Random.Range(spawnRateMin, spawnRateMax);
-            go.transform.position = new Vector3(Random.Range(-10,10), 0.1f, Random.Range(-10, 10));
         }
     }
 }
