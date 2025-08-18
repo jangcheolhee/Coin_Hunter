@@ -9,11 +9,7 @@ public class FallingObstacle : MonoBehaviour
         Destroy(gameObject, 3);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
             //PlayerPrefs.Save();
         }
         bestScoreText.text = $"BestScore : {bestScore}";
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("Respawn");
+        foreach (GameObject go in gos) 
+        { 
+            go.SetActive(false);
+        }
     }
     public void AddScore()
     {
