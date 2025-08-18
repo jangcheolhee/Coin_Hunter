@@ -21,7 +21,8 @@ public class ObjstacleSpawner : MonoBehaviour
         if (timer > interval)
         {
             GameObject go = Instantiate(obs);
-            go.transform.position = new Vector3(Random.Range(-10,10),10f, Random.Range(-10, 10));
+            go.transform.position = new Vector3(Random.Range(-4,4),10f, Random.Range(-4, 4));
+            go.transform.rotation = Quaternion.Euler(45, 45, 45);
             timer = 0;
             interval = Random.Range(spawnRateMin, spawnRateMax);
         }

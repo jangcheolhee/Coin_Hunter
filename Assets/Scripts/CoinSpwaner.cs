@@ -23,7 +23,7 @@ public class CoinSpwaner : MonoBehaviour
             GameObject go = Instantiate(coin);
             timer = 0;
             interval = Random.Range(spawnRateMin, spawnRateMax);
-            go.transform.position = new Vector3(Random.Range(-10,10), 0.1f, Random.Range(-10, 10));
+            go.transform.position = new Vector3(Random.Range(-4,4), 0.1f, Random.Range(-4, 4));
         }
     }
 }
